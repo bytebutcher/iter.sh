@@ -9,20 +9,22 @@
 #   bytebutcher
 # ##################################################
 
+APP_NAME="$(basename "${BASH_SOURCE}")"
+
 # Usage explanation
 usage() {
-    echo "Usage: $0 [-f file] [-d delimiter] [-c column_names] <command>"
+    echo "Usage: $APP_NAME [-f file] [-d delimiter] [-c column_names] <command>"
     echo
     echo "Examples: "
     echo ""
     echo "  # Print every line of a text file"
-    echo "  $0 -f data.txt 'echo \$line'"
+    echo "  $APP_NAME -f data.txt 'echo \$line'"
     echo ""
     echo "  # Print every line of a csv file"
-    echo "  $0 -f data.txt -d ',' -c 'name,namespace' 'echo \$name is in \$namespace'"
+    echo "  $APP_NAME -f data.txt -d ',' -c 'name,namespace' 'echo \$name is in \$namespace'"
     echo ""
     echo "  # Pipe into iter and print every line of a csv file"
-    echo "  cat data.txt | $0 -d ',' -c 'name,namespace' 'echo \$name is in \$namespace'"
+    echo "  cat data.txt | $APP_NAME -d ',' -c 'name,namespace' 'echo \$name is in \$namespace'"
     echo ""
     exit 1
 }
